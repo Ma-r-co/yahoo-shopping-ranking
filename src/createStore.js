@@ -2,7 +2,7 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import { routerMiddleware, connectRouter } from 'connected-react-router';
-import { createBrowserHistory } from 'history';
+import { createHashHistory } from 'history';
 
 import * as reducers from './reducers';
 
@@ -12,7 +12,7 @@ const createRootReducer = (history) => combineReducers({
   router: connectRouter(history),
 });
 
-export const history = createBrowserHistory();
+export const history = createHashHistory();
 
 
 export default function configureStore(preloadedState) {
